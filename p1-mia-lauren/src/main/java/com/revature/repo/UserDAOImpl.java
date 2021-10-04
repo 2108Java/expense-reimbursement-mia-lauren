@@ -24,7 +24,7 @@ public class UserDAOImpl implements UserDAO {
 		{
 			Connection connection = connectionUtil.getConnection();
 			
-			String sql = "SELECT * FROM user_table WHERE username = ?";
+			String sql = "SELECT * FROM users WHERE username = ?";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
@@ -36,9 +36,10 @@ public class UserDAOImpl implements UserDAO {
 
 			while(rs.next()) {
 			
-			// user.setUser_id(rs.getInt("user_id"));
-			 user.setPassword(rs.getString("passwrd"));
+			 user.setUserID(rs.getInt("user_id"));
 			 user.setUsername(rs.getString("username"));
+			 user.setPassword(rs.getString("passwrd"));
+			 
 			
 			}
 		} 
