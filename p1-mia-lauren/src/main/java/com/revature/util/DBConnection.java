@@ -8,7 +8,7 @@ public class DBConnection {
 
 	private String dbLocation = "localhost:5432";
 	private String username = "postgres";
-	private String password = "miaduuh1";
+	private String password = "password";
 	private String url = "jdbc:postgresql://" + dbLocation + "/postgres";
 
 	public Connection getConnection() throws SQLException {
