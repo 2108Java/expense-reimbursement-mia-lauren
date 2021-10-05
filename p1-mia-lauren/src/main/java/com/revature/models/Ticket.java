@@ -8,7 +8,7 @@ public class Ticket {
 	private final String EXPENSE[] = {"Lodging", "Travel", "Food", "Other"};
 	
 	private int id;
-	private int userId;
+	private String username;
 	private String expenseType;
 	private double amount;
 	private String description;
@@ -20,20 +20,20 @@ public class Ticket {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Ticket(int userId, String expenseType, double amount, String description, String status) {
+	public Ticket(String username, String expenseType, double amount, String description, String status) {
 		super();
-		this.userId = userId;
+		this.username = username;
 		setExpenseType(expenseType);
 		this.amount = amount;
 		this.description = description;
 		setStatus(status);
 	}
 
-	public Ticket(int id, int userId, String expenseType, double amount, String description, Date submittedOn,
+	public Ticket(int id, String username, String expenseType, double amount, String description, Date submittedOn,
 			String status) {
 		super();
 		this.id = id;
-		this.userId = userId;
+		this.username = username;
 		setExpenseType(expenseType);
 		this.amount = amount;
 		this.description = description;
@@ -49,12 +49,12 @@ public class Ticket {
 		this.id = id;
 	}
 
-	public int getUserId() {
-		return userId;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getExpenseType() {

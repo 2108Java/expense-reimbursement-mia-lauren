@@ -7,12 +7,14 @@ import com.revature.models.Ticket;
 public interface TicketDAO {
 
 	//Read
-	List<Ticket> viewTicketsByStatus(String status);
+	List<Ticket> selectAllTickets();
+	
+	List<Ticket> selectTicketsByStatus(String status);
 
-	List<Ticket> viewTicketsByStatus(int userId, String status);
+	List<Ticket> selectTicketsByStatus(String username, String status);
 
 	//Create
-	boolean createNewTicket(Ticket ticket);
+	boolean insertNewTicket(Ticket ticket);
 	
 	//Update
 	boolean updateTicketStatus(int id, String status);

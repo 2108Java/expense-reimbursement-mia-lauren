@@ -6,6 +6,7 @@ public class User {
 	
 	private String username;
 	private String password;
+	private String userType;
 	
 	// CONSTRUCTORS
 	
@@ -14,10 +15,11 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User(String username, String password) {
+	public User(String username, String password, String userType) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.userType = userType;
 	}
 	
 	// GETTERS
@@ -28,6 +30,9 @@ public class User {
 	public String getPassword() {
 		return password;
 	}
+	public String getUserType() {
+		return userType;
+	}
 	
 	// SETTERS
 	
@@ -36,5 +41,8 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 }
