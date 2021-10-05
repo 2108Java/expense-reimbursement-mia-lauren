@@ -11,7 +11,7 @@ public interface TicketService {
 		
 		List<Ticket> viewTicketsByStatus(String status);
 
-		List<Ticket> viewTicketsByStatus(int userId, String status);
+		List<Ticket> viewTicketsByStatus(String username, String status);
 
 		//Create
 		boolean createNewTicket(Ticket ticket);
