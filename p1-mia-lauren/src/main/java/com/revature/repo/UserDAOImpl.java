@@ -24,7 +24,7 @@ public class UserDAOImpl implements UserDAO {
 		{
 			Connection connection = connectionUtil.getConnection();
 			
-			String sql = "SELECT * FROM user_table WHERE username = ?";
+			String sql = "SELECT * FROM users WHERE username = ?";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
@@ -35,11 +35,9 @@ public class UserDAOImpl implements UserDAO {
 			ResultSet rs = ps.executeQuery();
 
 			while(rs.next()) {
-			
-			// user.setUser_id(rs.getInt("user_id"));
-			 user.setPassword(rs.getString("user_password"));
 			 user.setUsername(rs.getString("username"));
-			
+			 user.setPassword(rs.getString("password"));
+			 user.setUserType(rs.getString("user_type"));
 			}
 		} 
 		catch (SQLException e) 

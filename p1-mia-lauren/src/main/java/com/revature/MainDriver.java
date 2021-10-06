@@ -12,6 +12,7 @@ public class MainDriver {
 	
 	public static void main(String[] args) {
 		
+
 		UserDAO userDao = new UserDAOImpl();
 		AuthenticateUser auth = new AuthenticateUserImpl(userDao);
 		UserLogin login = new UserLogin(auth);
@@ -21,7 +22,6 @@ public class MainDriver {
 		Javalin app = Javalin.create(config -> config.addStaticFiles(
 				staticFiles -> {staticFiles.directory = "/public";}
 				)).start(8000);
-		
 		
 	}
 

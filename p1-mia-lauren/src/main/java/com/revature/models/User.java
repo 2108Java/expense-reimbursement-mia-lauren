@@ -7,6 +7,7 @@ public class User {
 	private String username;
 	private String password;
 	private String userType;
+
 	
 	// CONSTRUCTORS
 	
@@ -42,7 +43,9 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
+
 }

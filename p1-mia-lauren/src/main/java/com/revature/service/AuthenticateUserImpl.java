@@ -1,10 +1,13 @@
 package com.revature.service;
 
 import com.revature.repo.UserDAO;
+import com.revature.repo.UserDAOImpl;
+import com.revature.repo.UserLogin;
 import com.revature.models.User;
 
 public class AuthenticateUserImpl implements AuthenticateUser {
 	
+
 	public UserDAO userDao;
 	
 	public AuthenticateUserImpl(UserDAO userDao) {
@@ -21,8 +24,14 @@ public class AuthenticateUserImpl implements AuthenticateUser {
 		boolean authenticated = false;
 		
 		if(user != null) {
+
 			if(user.getPassword() == username && user.getPassword().equals(password)) {
 				authenticated = true;
+			}
+			if((user.getUsername() == username) && (user.getPassword() == (password))) {
+				authenticated = true;
+			}else {
+//				loginMenu.display();
 			}
 		}
 		
