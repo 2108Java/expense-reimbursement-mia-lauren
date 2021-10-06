@@ -19,19 +19,15 @@ public class AuthenticateUserImpl implements AuthenticateUser {
 		
 //		UserDAO user = userDao.getUsername();
 		
+		
 		User user = getUser(username);
 		
 		boolean authenticated = false;
 		
 		if(user != null) {
 
-			if(user.getPassword() == username && user.getPassword().equals(password)) {
+			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				authenticated = true;
-			}
-			if((user.getUsername() == username) && (user.getPassword() == (password))) {
-				authenticated = true;
-			}else {
-//				loginMenu.display();
 			}
 		}
 		
@@ -40,6 +36,7 @@ public class AuthenticateUserImpl implements AuthenticateUser {
 
 	public User getUser(String username) {
 		// TODO Auto-generated method stub
+
 		User user = userDao.selectUserByUsername(username);
 		return user;
 	}

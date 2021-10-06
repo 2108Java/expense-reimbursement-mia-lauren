@@ -19,6 +19,7 @@ public class UserDAOImpl implements UserDAO {
 
 	public User selectUserByUsername(String username) {
 		// TODO Auto-generated method stub
+		
 		User user = new User();
 		try
 		{
@@ -39,6 +40,7 @@ public class UserDAOImpl implements UserDAO {
 			 user.setPassword(rs.getString("password"));
 			 user.setUserType(rs.getString("user_type"));
 			}
+			
 		} 
 		catch (SQLException e) 
 		{
