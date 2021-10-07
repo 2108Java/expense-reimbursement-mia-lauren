@@ -2,7 +2,6 @@ package com.revature.service;
 
 import com.revature.repo.UserDAO;
 import com.revature.repo.UserDAOImpl;
-import com.revature.repo.UserLogin;
 import com.revature.models.User;
 
 public class AuthenticateUserImpl implements AuthenticateUser {

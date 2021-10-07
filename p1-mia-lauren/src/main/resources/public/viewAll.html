@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<title>Manager Viewing Page</title>
+</head>
+<body>
+	<h1 style="padding: 20px; text-align: center; background-color: black; color: whitesmoke;">Employee Reimbursements</h1>
+	
+	<br>
+	<br>
+
+    <!-- DROP DOWN -->
+    <div style ="display: flex; justify-content: center;">
+        <label for="statuses">Choose Status :  </label>
+        
+        <select name="statuses" id="statuses">
+        <option value="pending" >Pending Tickets</option>
+        <option value="approved">Approved Tickets</option>
+        <option value="denied">Denied Tickets</option>
+        <option value="viewall">View All Tickets</option>
+        </select>
+    </div>
+
+    <br>
+    <br>
+	
+	<table title="Employee Reimbursements" class="table ">
+		<thead>
+			<tr>
+				<th scope="col">Employee ID #</th>
+				<th scope="col">Employee Name</th>
+				<th scope="col" >Ticket #</th>
+				<th scope="col">Reimbursement Type</th>
+				<th scope="col">Ticket Status</th>
+				<th scope="col">Reimbursement Cost</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr scope="row">
+				<td>Fake ID #</td>
+				<td>Fake Employee Name</td>
+				<td>Fake Ticket #</td>
+				<td>Fake Reimbursement Type</td>
+				<td>Fake Ticket Status</td>
+				<td>Fake Reimbursement Cost</td>
+			</tr>
+		</tbody>
+	</table>
+    <br>
+	
+
+    
+    <br>
+    <br>
+
+    <!-- RETURN BUTTON -->
+    <div style ="display: flex; justify-content: center;">
+       <a href="ManagerMenu.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:black;">Return to Dashboard</a>
+    </div>
+	
+	<br>
+	<br>
+	
+    <!-- LOGOUT FORM -->
+	<div style ="display: flex; justify-content: center; position: fixed;
+    padding: 10px 10px, 0px, 10px;
+    bottom: 1cm; width: 100%;  height: 2cm;
+            background: black;" id ="footer" > 
+		<form style="display:flex; justify-content: center;"  action = "/invalidateSession" method = "POST">
+			<input type="submit" class="btn btn-success" id = "logoutBtn" value="Logout">
+		</form>
+	</div>
+
+    <br>
+    <br>
+	
+	<!-- SCRIPTS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
