@@ -2,7 +2,6 @@ package com.revature.service;
 
 import com.revature.repo.UserDAO;
 import com.revature.repo.UserDAOImpl;
-import com.revature.repo.UserLogin;
 import com.revature.models.User;
 
 public class AuthenticateUserImpl implements AuthenticateUser {
@@ -14,7 +13,7 @@ public class AuthenticateUserImpl implements AuthenticateUser {
 		this.userDao = userDao;
 	}
 
-	public boolean authenticate(String username, String password) {
+	public User authenticate(String username, String password) {
 		// TODO Auto-generated method stub
 		
 //		UserDAO user = userDao.getUsername();
@@ -31,7 +30,12 @@ public class AuthenticateUserImpl implements AuthenticateUser {
 			}
 		}
 		
-		return authenticated;
+		if(authenticated) {
+			return user;
+		}
+		else {
+			return null;
+		}
 	}
 
 	public User getUser(String username) {

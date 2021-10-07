@@ -10,12 +10,13 @@ import com.revature.util.DBConnection;
 
 public class UserDAOImpl implements UserDAO {
 
-	public UserDAOImpl() {
+	DBConnection connectionUtil;
+	
+	public UserDAOImpl(DBConnection connectionUtil) {
 		super();
+		this.connectionUtil = connectionUtil;
 		// TODO Auto-generated constructor stub
 	}
-	
-	DBConnection connectionUtil = new DBConnection();
 
 	public User selectUserByUsername(String username) {
 		// TODO Auto-generated method stub

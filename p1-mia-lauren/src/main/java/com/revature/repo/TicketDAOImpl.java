@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.revature.models.Ticket;
@@ -40,6 +41,9 @@ public class TicketDAOImpl implements TicketDAO {
 						rs.getDate("submitted_on"),
 						rs.getString("status")));
 			}
+			
+			//make sure the date is formatted correctly when retrieved from the database
+//			System.out.println(ticketList.get(0).getSubmittedOn());
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

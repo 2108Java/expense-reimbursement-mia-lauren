@@ -2,6 +2,8 @@ package com.revature.models;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Ticket {
 	
 	private final String STATUS[] = {"Pending", "Approved", "Rejected"};
@@ -12,6 +14,8 @@ public class Ticket {
 	private String expenseType;
 	private double amount;
 	private String description;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd") //tell jackson how to format the date
 	private Date submittedOn;
 	private String status;
 	
