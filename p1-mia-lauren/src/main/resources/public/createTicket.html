@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Add Reimbursement Request</title>
+</head>
+<body>
+<div style="padding: 20px; text-align: center; background-color: black; color: whitesmoke;">
+   <h1>Add Reimbursement Request</h1> 
+</div>
+    
+    <br>
+
+    <div style="display: flex; justify-content: center;" >
+        <form action="/addTicket" method = "POST">
+        <label for="fname">First name:</label><br>
+        <input class="col-md-12"  type="text" id="fname" name="fname"><br><br>
+
+        <label for="lname">Last name:</label><br>
+        <input class="col-md-12" type="text" id="lname" name="lname"><br><br>
+
+        <label for="empID">Employee ID #:</label><br>
+        <input class="col-md-12"  type="text" id="empID" name="empID"><br><br>
+
+        <!-- DROPDOWN -->
+        <div>
+            <label for="types">Reimbursement Type:</label>
+    
+            <select name="types" id="types">
+            <option value="lodging" >LODGING</option>
+            <option value="travel">TRAVEL</option>
+            <option value="food">FOOD</option>
+            <option value="other">OTHER</option>
+            </select>
+        </div> <br>
+
+        <label for="lname">Description:</label><br>
+        <input class="col-md-12"  type="text" id="empID" name="empID"><br>
+
+        <br>
+
+        <label for="image">Upload Image:</label><br><br>
+        <input type="file" id="image" name="image" accept="image/*"><br>
+
+        <br>      
+
+            <div style ="display: flex; justify-content: center;">
+                        <!-- SUBMIT BUTTON -->
+  		<input type="submit" class="btn btn-secondary" value ="Submit Ticket">
+            </div>
+
+      </form> 
+    </div>
+
+    <br>
+    <br>
+
+    <!-- RETURN BUTTON -->
+    <div style ="display: flex; justify-content: center;">
+        <a href="EmployeeMenu.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:black;">Return to Dashboard</a>
+    </div>
+
+
+    <!-- SCRIPTS  -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

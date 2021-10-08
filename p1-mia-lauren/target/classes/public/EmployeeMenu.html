@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<title>Employee Menu</title>
+</head>
+<body>
+	<h1 style="padding: 20px; text-align: center; background-color: black; color: whitesmoke;">Welcome Employee!</h1>
+    <br>
+    <br>
+    <!-- ADD/CREATE A TICKET -->
+    <div style ="display: flex; justify-content: center;">
+        <a href="createTicket.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border: none;">Create a Reimbursement Request</a>
+    </div>
+    
+    <br>
+
+    <!-- VIEW PAST TICKETS -->
+    <div style ="display: flex; justify-content: center;">
+        <a href="viewAllTickets.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:none;">View All Reimbursement Requests</a>
+    </div>
+
+    <!-- LOGOUT FORM -->
+    <!-- <div > 
+		<form action = "/invalidateSession" method = "POST">
+			<input type="submit" class=" form-control btn btn-success" id = "logoutBtn" value="Logout">
+		</form>
+	</div> -->
+    <div style ="display: flex; justify-content: center; position: fixed;
+    padding: 10px 10px, 0px, 10px;
+    bottom: 1cm; width: 100%;  height: 2cm;
+            background: black;" id ="footer" > 
+		<form style="display:flex; justify-content: center;"  action = "/invalidateSession" method = "POST">
+			<input type="submit" class="btn btn-success" id = "logoutBtn" value="Logout">
+		</form>
+	</div>
+	
+	<!-- SCRIPTS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

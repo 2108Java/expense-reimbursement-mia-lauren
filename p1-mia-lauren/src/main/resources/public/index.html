@@ -5,15 +5,38 @@
 <title>Login Page</title>
 </head>
 <body>
-	<h1>Welcome Employee!</h1>
+    <h1 style="padding: 20px; text-align: center; background-color: black; color: whitesmoke;">WELCOME!</h1>
 	<br>
-	<h3>Please Login</h3>
+	<h3 style="text-align: center;">LOGIN</h3>
+    <br>
+
 	
-	<form action="/authenticate" method = "POST">
-		<input type ="text" name = "username">
-		<input type = "password" name = "password">
-		<input type = "submit" title = "Login">
-	</form>
-	
+	<!-- BOOTSTRAP FORM -->
+    <div style="display: flex; justify-content: center;">
+        <form action="/authenticate" method = "POST">
+            <!-- USERNAME -->
+            <div class=" form-group">
+                <!-- <label for="username">Username</label> -->
+                <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+            <br>
+            <div class="form-group">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <br>
+
+            <!-- SUBMIT BUTTON  -->
+            <div style="display: flex; justify-content: center;">
+                 <button type="submit" class="btn btn-secondary">Submit</button>
+            </div>
+           
+        </form>
+	</div>
+
+	<!-- SCRIPTS  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+	    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 </html>

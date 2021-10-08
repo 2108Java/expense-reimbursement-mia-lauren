@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<title>Manager Menu</title>
+</head>
+<body>
+	<h1 style="padding: 20px; text-align: center; background-color: black; color: whitesmoke;">Welcome Finance Manager!</h1>
+
+
+    <br>
+    <br>
+
+    
+    <br>
+    <br>
+    <div style ="display: flex; justify-content: center; padding: 10px 10px 10px 10px; margin: 70px;">
+        <!-- EDIT A TICKET -->
+        <div>
+            <a href="editTickets.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border: none; padding: 10px 10px 10px 10px; margin: 10px;">Edit a Reimbursement Request</a>
+        </div>
+        
+        <br><br>
+
+        <!-- VIEWm ALL EMPLOYEE TICKETS -->
+        <div>
+            <a href="viewAll.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:none; padding: 10px 10px 10px 10px; margin: 10px;">View All Reimbursement Requests</a>
+        </div>
+    </div>
+    
+
+
+    <br>
+    <br>
+    <br>
+
+	
+    <!-- LOGOUT FORM -->
+	<div style ="display: flex; justify-content: center; position: fixed;
+    padding: 10px 10px, 0px, 10px;
+    bottom: 1cm; width: 100%;  height: 2cm;
+            background: black;" id ="footer" > 
+		<form style="display:flex; justify-content: center;"  action = "/invalidateSession" method = "POST">
+			<input type="submit" class="btn btn-success" id = "logoutBtn" value="Logout">
+		</form>
+	</div>
+
+    <br>
+    <br>
+	
+	<!-- SCRIPTS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
