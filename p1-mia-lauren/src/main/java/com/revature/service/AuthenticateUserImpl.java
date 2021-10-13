@@ -23,7 +23,7 @@ public class AuthenticateUserImpl implements AuthenticateUser {
 		
 		boolean authenticated = false;
 		
-		if(user != null) {
+		if(user.getUsername() != null && user.getPassword() != null) {
 
 			if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				authenticated = true;

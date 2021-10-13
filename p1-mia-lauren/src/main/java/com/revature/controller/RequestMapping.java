@@ -1,5 +1,8 @@
 package com.revature.controller;
 
+import com.revature.repo.UserDAOImpl;
+import com.revature.util.DBConnection;
+
 import io.javalin.Javalin;
 
 public class RequestMapping {
@@ -13,13 +16,16 @@ public class RequestMapping {
 	}
 	public void setupEndpoints(Javalin app) {		
 		
+		//homepage
+		app.get("/", ctx -> ctx.req.getRequestDispatcher("index.html").forward(ctx.req, ctx.res));
+				
 		//login and logout
 		app.post("/authenticate", ctx -> {auth.authenticate(ctx);});
 		
 		app.get("/logout", ctx -> {auth.logout(ctx);});
 		
 		//user dashboards
-//		app.get(null, null);
+		app.get("/dashboard", ctx -> ctx.req.getRequestDispatcher("viewAll.html").forward(ctx.req, ctx.res));
 		
 		//get all tickets
 		app.get("/tickets", ctx -> {
@@ -33,7 +39,7 @@ public class RequestMapping {
 //		app.put(null, null);
 		
 		//get tickets by username
-//		app.get(null, null);
+//		app.get("/tickets/user, null);
 		
 		//get tickets by username and status
 //		app.get(null, null);
