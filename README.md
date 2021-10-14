@@ -1,6 +1,7 @@
 **Expense Reimbursement System**
 
 **Project Description**
+
 The Expense Reimbursement System (ERS) will be used to managed to submission and evaluation process of reimbursement requests (tickets). Employees can submit and view previous requests. Finance Managers can view all requests and update their status.
 
 **Technologies Used**
