@@ -20,9 +20,6 @@ public class Authenticate {
 		String username = ctx.formParam("username");
 		String password = ctx.formParam("password");
 		
-		System.out.println(username);
-		System.out.println(password);
-		
 		User user = userAuth.authenticate(username, password);
 		String page = "";
 		
@@ -40,10 +37,19 @@ public class Authenticate {
 		}
 		ctx.redirect(page);
 	}
+	
+	public boolean checkAccess(Context ctx) {
+		boolean access = false;
+		if(ctx.sessionAttribute("access") != null) {
+			access = true;
+		}
+		
+		return access;
+	}
 
 	public void logout(Context ctx) {
-		ctx.consumeSessionAttribute("access");
-		ctx.consumeSessionAttribute("userType");
+		ctx.sessionAttribute("access", null);
+		ctx.sessionAttribute("userType", null);
 		
 		ctx.redirect("/");
 	}

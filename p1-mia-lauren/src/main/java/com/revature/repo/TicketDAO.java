@@ -9,7 +9,7 @@ public interface TicketDAO {
 	//Read
 	List<Ticket> selectAllTickets();
 	
-	List<Ticket> selectTicketsByStatus(String status);
+	List<Ticket> selectAllTickets(String username);
 
 	List<Ticket> selectTicketsByStatus(String username, String status);
 

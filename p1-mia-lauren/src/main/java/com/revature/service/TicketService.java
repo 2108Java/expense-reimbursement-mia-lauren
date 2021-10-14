@@ -9,7 +9,7 @@ public interface TicketService {
 		//Read
 		List<Ticket> viewAllTickets();
 		
-		List<Ticket> viewTicketsByStatus(String status);
+		List<Ticket> viewAllTickets(String username);
 
 		List<Ticket> viewTicketsByStatus(String username, String status);
 

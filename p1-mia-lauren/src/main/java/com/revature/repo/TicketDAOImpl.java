@@ -53,15 +53,15 @@ public class TicketDAOImpl implements TicketDAO {
 	}
 	
 	@Override
-	public List<Ticket> selectTicketsByStatus(String status) {
+	public List<Ticket> selectAllTickets(String username) {
 		List<Ticket> ticketList = new ArrayList<>();
 		
 		try {
 			Connection connection = dbConnection.getConnection();
 			
-			String sql = "SELECT * FROM tickets WHERE status = ?";
+			String sql = "SELECT * FROM tickets WHERE username = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(1, status);
+			ps.setString(1, username);
 			
 			ResultSet rs = ps.executeQuery();
 			

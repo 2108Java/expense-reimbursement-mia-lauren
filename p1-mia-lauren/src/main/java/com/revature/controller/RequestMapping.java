@@ -25,32 +25,45 @@ public class RequestMapping {
 		app.post("/logout", ctx -> {auth.logout(ctx);});
 		
 		//user dashboards
-		app.get("/dashboard", ctx -> {tCon.getDashboard(ctx);});
+		app.get("/dashboard", ctx -> {
+			if(auth.checkAccess(ctx)){
+				tCon.getDashboard(ctx);
+			}
+			else {
+				ctx.redirect("/");
+			}
+		});
 		
-		app.get("/dashboard/viewAll", ctx -> ctx.req.getRequestDispatcher("viewAll.html").forward(ctx.req, ctx.res));
+		app.get("/viewTickets", ctx -> {
+			if(auth.checkAccess(ctx)) {
+				tCon.viewTickets(ctx);
+			}
+			else {
+				ctx.redirect("/");
+			}
+		});
 		
-		app.get("/dashboard/edit", ctx -> ctx.req.getRequestDispatcher("editTickets.html").forward(ctx.req, ctx.res));
+		app.get("/edit", ctx -> {
+			if(auth.checkAccess(ctx)) {
+				tCon.editTickets(ctx);
+			}
+			else {
+				ctx.redirect("/");
+			}
+		});
 		
 		
 		//get all tickets
-		app.get("/tickets", ctx -> {
-			ctx.json(tCon.getAllTickets());
-		});
+		app.get("/tickets", ctx -> {ctx.json(tCon.getAllTickets(ctx));});
 		
 		//get tickets by status
 //		app.get(null, null);
 		
 		//update ticket status
 //		app.put(null, null);
-		
-		//get tickets by username
-//		app.get("/tickets/user, null);
-		
-		//get tickets by username and status
-//		app.get(null, null);
 				
 		//post ticket
-//		app.post(null, null);
+		app.post("/addTicket", ctx -> {tCon.addTicket(ctx);});
 	}
 
 }

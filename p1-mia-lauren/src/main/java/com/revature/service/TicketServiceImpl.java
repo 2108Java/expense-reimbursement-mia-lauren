@@ -18,8 +18,8 @@ public class TicketServiceImpl implements TicketService {
 	}
 
 	@Override
-	public List<Ticket> viewTicketsByStatus(String status) {
-		return database.selectTicketsByStatus(status);
+	public List<Ticket> viewAllTickets(String username) {
+		return database.selectAllTickets(username);
 	}
 
 	@Override

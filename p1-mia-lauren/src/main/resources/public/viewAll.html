@@ -58,7 +58,7 @@
 
     <!-- RETURN BUTTON -->
     <div style ="display: flex; justify-content: center;">
-       <a href="ManagerMenu.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:black;">Return to Dashboard</a>
+       <a href="/dashboard" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:black;">Return to Dashboard</a>
     </div>
 	
 	<br>
@@ -69,7 +69,7 @@
     padding: 10px 10px, 0px, 10px;
     bottom: 1cm; width: 100%;  height: 2cm;
             background: black;" id ="footer" > 
-		<form style="display:flex; justify-content: center;"  action = "/invalidateSession" method = "POST">
+		<form style="display:flex; justify-content: center;"  action = "/logout" method = "POST">
 			<input type="submit" class="btn btn-success" id = "logoutBtn" value="Logout">
 		</form>
 	</div>
