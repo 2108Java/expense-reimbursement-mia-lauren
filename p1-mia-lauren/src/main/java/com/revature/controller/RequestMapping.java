@@ -22,10 +22,15 @@ public class RequestMapping {
 		//login and logout
 		app.post("/authenticate", ctx -> {auth.authenticate(ctx);});
 		
-		app.get("/logout", ctx -> {auth.logout(ctx);});
+		app.post("/logout", ctx -> {auth.logout(ctx);});
 		
 		//user dashboards
-		app.get("/dashboard", ctx -> ctx.req.getRequestDispatcher("viewAll.html").forward(ctx.req, ctx.res));
+		app.get("/dashboard", ctx -> {tCon.getDashboard(ctx);});
+		
+		app.get("/dashboard/viewAll", ctx -> ctx.req.getRequestDispatcher("viewAll.html").forward(ctx.req, ctx.res));
+		
+		app.get("/dashboard/edit", ctx -> ctx.req.getRequestDispatcher("editTickets.html").forward(ctx.req, ctx.res));
+		
 		
 		//get all tickets
 		app.get("/tickets", ctx -> {

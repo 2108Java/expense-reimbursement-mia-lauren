@@ -18,14 +18,14 @@
     <div style ="display: flex; justify-content: center; padding: 10px 10px 10px 10px; margin: 70px;">
         <!-- EDIT A TICKET -->
         <div>
-            <a href="editTickets.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border: none; padding: 10px 10px 10px 10px; margin: 10px;">Edit a Reimbursement Request</a>
+            <a href="/dashboard/edit" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border: none; padding: 10px 10px 10px 10px; margin: 10px;">Edit a Reimbursement Request</a>
         </div>
         
         <br><br>
 
         <!-- VIEWm ALL EMPLOYEE TICKETS -->
         <div>
-            <a href="viewAll.html" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:none; padding: 10px 10px 10px 10px; margin: 10px;">View All Reimbursement Requests</a>
+            <a href="/dashboard/viewAll" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:none; padding: 10px 10px 10px 10px; margin: 10px;">View All Reimbursement Requests</a>
         </div>
     </div>
     
@@ -41,7 +41,7 @@
     padding: 10px 10px, 0px, 10px;
     bottom: 1cm; width: 100%;  height: 2cm;
             background: black;" id ="footer" > 
-		<form style="display:flex; justify-content: center;"  action = "/invalidateSession" method = "POST">
+		<form style="display:flex; justify-content: center;"  action = "/logout" method = "POST">
 			<input type="submit" class="btn btn-success" id = "logoutBtn" value="Logout">
 		</form>
 	</div>
