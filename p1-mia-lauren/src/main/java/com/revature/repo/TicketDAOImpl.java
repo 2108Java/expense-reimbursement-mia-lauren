@@ -158,7 +158,7 @@ public class TicketDAOImpl implements TicketDAO {
 		try {
 			Connection connection = dbConnection.getConnection();
 			
-			String sql = "UPDATE TABLE tickets SET status = ? WHERE id = ?";
+			String sql = "UPDATE tickets SET status = ? WHERE ticket_id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, status);
 			ps.setInt(2, id);

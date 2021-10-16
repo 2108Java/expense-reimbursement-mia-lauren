@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Ticket {
 	
-	private final String STATUS[] = {"Pending", "Approved", "Rejected"};
-	private final String EXPENSE[] = {"Lodging", "Travel", "Food", "Other"};
+	private final String STATUS[] = {"PENDING", "APPROVED", "REJECTED"};
+	private final String EXPENSE[] = {"LODGING", "TRAVEL", "FOOD", "OTHER"};
 	
 	private int id;
 	private String username;

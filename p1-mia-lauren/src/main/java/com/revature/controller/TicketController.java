@@ -74,10 +74,7 @@ public class TicketController {
 		String page = "";
 		String userType = ctx.sessionAttribute("userType").toString();
 		
-		if(userType.equalsIgnoreCase("finance manager")) {
-			page = "editTickets.html";
-		}
-		else if(userType.equalsIgnoreCase("employee")) {
+		if(userType.equalsIgnoreCase("employee")) {
 			page = "createTicket.html";
 		}
 		else{
@@ -112,9 +109,9 @@ public class TicketController {
 	public void addTicket(Context ctx) {
 		String username = ctx.sessionAttribute("access").toString();
 		String expenseType = ctx.formParam("types");
-		double amount = Double.parseDouble(ctx.formParam("amount"));
+		double amount = Double.parseDouble(ctx.formParam("cost"));
 		String description = ctx.formParam("description");
-		String status = "Pending";
+		String status = "PENDING";
 		
 		Ticket ticket = new Ticket(username, expenseType, amount, description, status);
 		
@@ -125,6 +122,19 @@ public class TicketController {
 		else {
 			ctx.status(500);
 			ctx.redirect("/edit");
+		}
+	}
+
+	public void updateTicket(Context ctx, String status) {
+		int id = Integer.parseInt(ctx.formParam("id"));
+		
+		if(tServ.updateTicketStatus(id, status)) {
+			ctx.status(200);
+			ctx.redirect("/dashboard");
+		}
+		else {
+			ctx.status(500);
+			ctx.redirect("/viewTickets");
 		}
 	}
 

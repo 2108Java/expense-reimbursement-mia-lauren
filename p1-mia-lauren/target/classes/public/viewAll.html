@@ -15,11 +15,11 @@
     <div style ="display: flex; justify-content: center;">
         <label for="statuses">Choose Status :  </label>
         
-        <select name="statuses" id="statuses">
+        <select name="statuses" id="statuses" onchange="filterList()">
+        <option value="viewall">View All Tickets</option>
         <option value="pending" >Pending Tickets</option>
         <option value="approved">Approved Tickets</option>
         <option value="denied">Denied Tickets</option>
-        <option value="viewall">View All Tickets</option>
         </select>
     </div>
 
@@ -39,14 +39,6 @@
 			</tr>
 		</thead>
 		<tbody id = "ticketTableBody">
-			<tr scope="row">
-				<td>Fake ID #</td>
-				<td>Fake Employee Name</td>
-				<td>Fake Ticket #</td>
-				<td>Fake Reimbursement Type</td>
-				<td>Fake Ticket Status</td>
-				<td>Fake Reimbursement Cost</td>
-			</tr>
 		</tbody>
 	</table>
     <br>
@@ -56,6 +48,24 @@
     <br>
     <br>
 
+		<!-- FORM -->
+		<div style ="display: flex; justify-content: center;">
+			<!-- SELECT TICKET TO EDIT BY TICKET # -->
+			<form style ="display: flex; justify-content: center;" action="/approve" method ="POST" >
+				<input type = "number" name="id" id = "approvestatusInquiry" placeholder = "Enter Ticket #">
+				<button style="width:25%; margin:10px; padding: 5px 15px; background-color: black; color: whitesmoke; border: none">Approve</button>
+			</form>
+			<form style ="display: flex; justify-content: center;" action="/reject" method="POST">
+				<input type = "number" name="id" id = "denystatusInquiry" placeholder = "Enter Ticket #">
+				<button style="width:25%; margin:10px; padding: 5px 15px; background-color: black; color: whitesmoke; border: none">Deny</button>
+			</form>
+	
+			<br>
+			<br>
+			<br>
+
+		</div>
+		
     <!-- RETURN BUTTON -->
     <div style ="display: flex; justify-content: center;">
        <a href="/dashboard" class="btn btn-info" role="button" style="background-color: black; color: whitesmoke; border:black;">Return to Dashboard</a>

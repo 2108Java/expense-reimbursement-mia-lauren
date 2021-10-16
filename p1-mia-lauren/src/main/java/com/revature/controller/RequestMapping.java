@@ -56,11 +56,10 @@ public class RequestMapping {
 		//get all tickets
 		app.get("/tickets", ctx -> {ctx.json(tCon.getAllTickets(ctx));});
 		
-		//get tickets by status
-//		app.get(null, null);
-		
 		//update ticket status
-//		app.put(null, null);
+		app.post("/approve", ctx -> {tCon.updateTicket(ctx, "APPROVED");});
+		
+		app.post("/reject", ctx -> {tCon.updateTicket(ctx, "REJECTED");});
 				
 		//post ticket
 		app.post("/addTicket", ctx -> {tCon.addTicket(ctx);});
