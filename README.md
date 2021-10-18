@@ -29,13 +29,6 @@ The Expense Reimbursement System (ERS) will be used to managed to submission and
     Employees may eventually be able to submit a photos or other documents with their tickets.
     Employees will eventually receive an email notification when a ticket has been approved.
 
-**Getting Started**
-
-(include git clone command) (include all environment setup steps)
-
-    Be sure to include BOTH Windows and Unix command
-    Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
-
 **Contributors**
 
     Mia Donaldson
