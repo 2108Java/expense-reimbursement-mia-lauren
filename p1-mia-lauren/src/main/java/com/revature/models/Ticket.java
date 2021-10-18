@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Ticket {
 	
+	//accepted values for ticket status and expense type
 	private final String STATUS[] = {"PENDING", "APPROVED", "REJECTED"};
 	private final String EXPENSE[] = {"LODGING", "TRAVEL", "FOOD", "OTHER"};
 	

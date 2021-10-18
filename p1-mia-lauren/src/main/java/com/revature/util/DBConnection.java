@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
+import com.revature.service.TicketServiceImpl;
+
 public class DBConnection {
 
 
@@ -12,10 +16,13 @@ public class DBConnection {
 	private static final String USERNAME = "postgres";
 	private static final String PASSWORD = "2108Java";
 	
+	final static Logger loggy = Logger.getLogger(DBConnection.class);
+	
 	public Connection getConnection() throws SQLException {
 		
 		//attempt to create a connection to the database
 		Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+		loggy.info("Connection to database generated.");
 		
 		return conn;
 	}

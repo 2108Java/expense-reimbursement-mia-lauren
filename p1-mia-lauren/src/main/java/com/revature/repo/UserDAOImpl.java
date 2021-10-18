@@ -5,12 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
+
+import com.revature.MainDriver;
 import com.revature.models.User;
 import com.revature.util.DBConnection;
 
 public class UserDAOImpl implements UserDAO {
 
 	DBConnection connectionUtil;
+	final static Logger loggy = Logger.getLogger(UserDAOImpl.class);
 	
 	public UserDAOImpl(DBConnection connectionUtil) {
 		super();
@@ -41,11 +45,11 @@ public class UserDAOImpl implements UserDAO {
 			 user.setPassword(rs.getString("password"));
 			 user.setUserType(rs.getString("user_type"));
 			}
-			
+			loggy.info(username + " retrieved from the database.");
 		} 
 		catch (SQLException e) 
 		{
-			// TODO Auto-generated catch block
+			loggy.warn(e.toString());
 			e.printStackTrace();
 		}
 		

@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import org.junit.Before;
@@ -12,6 +14,8 @@ public class AuthenticateUserImplTest {
 	
 	@Mock 
 	private UserDAOImpl userDao;
+	private User employee = new User("employee", "employee", "employee");
+	private User manager = new User("finance", "manager", "finance manager");
 	
 	public AuthenticateUserImpl userAuth;
 	
@@ -20,9 +24,19 @@ public class AuthenticateUserImplTest {
 		userDao = mock(UserDAOImpl.class);
 		userAuth = new AuthenticateUserImpl(userDao);
 		
-//		when(userDao.selectUserByUsername("employee").thenReturn(new User("employee", "employee", "employee")));
+		doReturn(employee).when(userDao.selectUserByUsername("employee"));
+		doReturn(manager).when(userDao.selectUserByUsername("finance"));		
 		
 	}
 	
+	public void testGetUser() {
+		assertEquals(employee, userAuth.getUser("employee"));
+		assertEquals(manager, userAuth.getUser("finance"));
+	}
+	
+	public void testAuthenticate() {
+		assertEquals(employee, userAuth.authenticate("employee", "employee"));
+		assertEquals(manager, userAuth.authenticate("finance", "manager"));
+	}
 
 }
