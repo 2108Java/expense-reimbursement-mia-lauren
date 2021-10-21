@@ -28,6 +28,19 @@ The Expense Reimbursement System (ERS) will be used to managed to submission and
     Passwords will by hashed/encrypted instead of stored as plain text.
     Employees may eventually be able to submit a photos or other documents with their tickets.
     Employees will eventually receive an email notification when a ticket has been approved.
+    
+**Getting Started**
+    
+    To download this git repository enter the following command in git bash:
+    git clone 
+    
+    All necessary code to get started can be found in this repository.
+    The database used in the original project is not publicly accessible.
+    To run the application successfully a database is necessary. It is recommended that you set up a database yourself.
+    The SQL used to create the tables can be found in the PostgreSQL folder.
+    To successfully connect to the new database using JDBC update the username, password, and URL found in DBConnection.java.
+    The file path is src\main\java\com\revature\util
+
 
 **Contributors**
 
