@@ -32,7 +32,7 @@ The Expense Reimbursement System (ERS) will be used to managed to submission and
 **Getting Started**
     
     To download this git repository enter the following command in git bash:
-    git clone 
+    git clone https://github.com/2108Java/expense-reimbursement-mia-lauren.git
     
     All necessary code to get started can be found in this repository.
     The database used in the original project is not publicly accessible.
